@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 import Foundation
 
-public struct LoginResponseDTO: Codable {
+public struct LoginResponseDTO: Codable, @unchecked Sendable {
     public let error: Bool
     public var reason: String?
     public let token: String?
@@ -16,7 +16,7 @@ public struct LoginResponseDTO: Codable {
     }
 }
 
-public struct RegisterResponseDTO: Codable {
+public struct RegisterResponseDTO: Codable, @unchecked Sendable {
     public let error: Bool
     public var reason: String? = nil
     
