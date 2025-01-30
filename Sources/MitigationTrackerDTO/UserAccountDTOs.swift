@@ -30,6 +30,37 @@ public struct RegisterResponseDTO: Codable, @unchecked Sendable {
     }
 }
 
+public struct AccountRequestDTO: Codable, @unchecked Sendable {
+    public let companyName: String
+    public let email: String?
+    public let phone: String?
+    public let address: String?
+    public let address2: String?
+    public let city: String?
+    public let state: String?
+    public let zip: String?
+    
+    public init(
+        companyName: String,
+        email: String? = nil,
+        phone: String? = nil,
+        address: String? = nil,
+        address2: String? = nil,
+        city: String? = nil,
+        state: String? = nil,
+        zip: String? = nil
+    ) {
+        self.companyName = companyName
+        self.email = email
+        self.phone = phone
+        self.address = address
+        self.address2 = address2
+        self.city = city
+        self.state = state
+        self.zip = zip
+    }
+}
+
 public struct AccountResponseDTO: Codable, @unchecked Sendable {
     // May need owner information later, not sure yet.
     public let error: Bool
@@ -69,6 +100,16 @@ public struct AccountResponseDTO: Codable, @unchecked Sendable {
         self.city = city
         self.state = state
         self.zip = zip
+    }
+}
+
+public struct SubscriptionRequestDTO: Codable, @unchecked Sendable {
+    public let planId: UUID
+    public let accountId: UUID
+    
+    public init(planId: UUID, accountId: UUID) {
+        self.planId = planId
+        self.accountId = accountId
     }
 }
 
