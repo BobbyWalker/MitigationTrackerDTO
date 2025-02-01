@@ -74,6 +74,7 @@ public struct AccountResponseDTO: Codable, @unchecked Sendable {
     public let city: String?
     public let state: String?
     public let zip: String?
+    public let subscriptionPlanId: UUID?
     // May need to add array of users belonging to the account
     
     public init(
@@ -87,7 +88,8 @@ public struct AccountResponseDTO: Codable, @unchecked Sendable {
         address2: String? = nil,
         city: String? = nil,
         state: String? = nil,
-        zip: String? = nil
+        zip: String? = nil,
+        subscriptionPlanId: UUID? = nil
     ) {
         self.error = error
         self.reason = reason
@@ -100,6 +102,7 @@ public struct AccountResponseDTO: Codable, @unchecked Sendable {
         self.city = city
         self.state = state
         self.zip = zip
+        self.subscriptionPlanId = subscriptionPlanId
     }
 }
 
