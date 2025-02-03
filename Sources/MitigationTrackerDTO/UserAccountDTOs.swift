@@ -9,14 +9,16 @@ public struct LoginResponseDTO: Codable, @unchecked Sendable {
     public let userId: UUID?
     public let tempPassword: Bool?
     public let accountId: UUID?
+    public let hasPaidSubscription: Bool?
     
-    public init(error: Bool = false, token: String? = nil, userId: UUID? = nil, reason: String? = nil, tempPassword: Bool? = false, accountId: UUID? = nil) {
+    public init(error: Bool = false, token: String? = nil, userId: UUID? = nil, reason: String? = nil, tempPassword: Bool? = false, accountId: UUID? = nil, hasPaidSubscription: Bool? = false) {
         self.error = error
         self.token = token
         self.userId = userId
         self.reason = reason
         self.tempPassword = tempPassword
         self.accountId = accountId
+        self.hasPaidSubscription = hasPaidSubscription
     }
 }
 
