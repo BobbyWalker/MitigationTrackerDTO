@@ -46,7 +46,7 @@ public struct ContactResponseDTO: Codable, @unchecked Sendable {
     public let reason: String?
     public let id: UUID?
     public let firstName: String?
-    public let name: String
+    public let name: String?
     public let email: String?
     public let phone: String?
     public let address: String?
@@ -58,7 +58,7 @@ public struct ContactResponseDTO: Codable, @unchecked Sendable {
         reason: String? = nil,
         id: UUID? = nil,
         firstName: String? = nil,
-        name: String,
+        name: String? = nil,
         email: String? = nil,
         phone: String? = nil,
         address: String? = nil,
